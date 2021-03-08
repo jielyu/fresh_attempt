@@ -1,0 +1,50 @@
+cmake_minimum_required(VERSION 3.10)
+project(test)
+
+Add_Definitions(-DUNICODE -D_UNICODE -DBUILD_XXX_DLL)
+
+find_package(OpenMP REQUIRED)
+if(OPENMP_FOUND)
+    message("OPENMP FOUND")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")
+endif()
+
+set(CMAKE_BUILD_TYPE "Release")
+set(CMAKE_CXX_STANDARD 11)
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++11")
+SET(CMAKE_INSTALL_PREFIX "../dist")
+
+
+#这个就是定义各个版本对应的后缀，例如d，debug版本后缀，当然你想定义为其他，	#自己修改这块就可以了。
+SET(CMAKE_DEBUG_POSTFIX "d" CACHE STRING "add a postfix, usually d on windows")
+SET(CMAKE_RELEASE_POSTFIX "" CACHE STRING "add a postfix, usually empty on windows")
+SET(CMAKE_RELWITHDEBINFO_POSTFIX "rd" CACHE STRING "add a postfix, usually empty on windows")
+SET(CMAKE_MINSIZEREL_POSTFIX "s" CACHE STRING "add a postfix, usually empty on windows")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+ 
+# Set the build postfix extension according to what configuration is being built.
+IF (CMAKE_BUILD_TYPE MATCHES "Release")
+    SET(CMAKE_BUILD_POSTFIX "${CMAKE_RELEASE_POSTFIX}")
+ELSEIF (CMAKE_BUILD_TYPE MATCHES "MinSizeRel")
+    SET(CMAKE_BUILD_POSTFIX "${CMAKE_MINSIZEREL_POSTFIX}")
+ELSEIF(CMAKE_BUILD_TYPE MATCHES "RelWithDebInfo")
+    SET(CMAKE_BUILD_POSTFIX "${CMAKE_RELWITHDEBINFO_POSTFIX}")
+ELSEIF(CMAKE_BUILD_TYPE MATCHES "Debug")
+    SET(CMAKE_BUILD_POSTFIX "${CMAKE_DEBUG_POSTFIX}")
+ELSE()
+    SET(CMAKE_BUILD_POSTFIX "")
+ENDIF()
+
+include_directories(src/my_math)
+include_directories(src/my_str)
+add_subdirectory(src)
+set(EXT_LIBS ${EXT_LIBS} my_math my_str)
+message(STATUS "EXT_LIBS=${EXT_LIBS}")
+message(STATUS "CMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}")
+
+add_executable(${PROJECT_NAME} src/main.cpp)
+target_link_libraries(${PROJECT_NAME} ${EXT_LIBS})
+install(TARGETS ${PROJECT_NAME} DESTINATION bin)
