@@ -10,8 +10,7 @@ public class BasicLearner {
     public string name{get{return "basic";}} // 当前对象的名嘴标号
 
     public void print() {
-        Console.WriteLine("{0}:rows={1}, cols={2}, area={3}", 
-            this.name, rows, cols, this.rows*this.cols);
+        Console.WriteLine("Hello {0}, Hello {1}", "World", "C#");
     }
 
     /* 用于测试

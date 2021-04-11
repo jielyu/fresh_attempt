@@ -31,9 +31,11 @@ namespace cs_learner{
             Console.WriteLine("int:" + i_var);
             Console.WriteLine("uint:" + ui_var);
             Console.WriteLine("long:" +l_var);
+            Console.WriteLine("ulong:" +ul_var);
             Console.WriteLine("decimal:" + d_var);
             Console.WriteLine("float:" + f_var);
             Console.WriteLine("double:" + db_var);
+            Console.WriteLine("string:" + name);
             // 测试动态数据类型，在运行时决定数据类型
             dynamic d1_test = 12;
             dynamic d2_test = false;
