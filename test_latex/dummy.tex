@@ -1,0 +1,221 @@
+%\documentclass{article}  
+%  
+%\usepackage{changes}  
+%\usepackage{lipsum}% <- For dummy text  
+%\definechangesauthor[name={Per cusse}, color=orange]{per}  
+%\setremarkmarkup{(#2)}  
+%\usepackage{color}  
+%  
+%\begin{document}  
+%\lipsum[1-7]  
+%  
+%	Although a complete benchmarking of xMCC against similar methods is outside the scope of the present report, we compared the graph-based segmentation step which--combined with the MUC--underlies the feature selection in the xMCC framework, with principal component analysis (PCA).  PCA is an efficient approach for reducing the dimensionality and for capturing endogenous components in electrophysiological time series
+%  
+%% 	Although a complete benchmarking of xMCC against similar methods is outside the scope of the present report, we compared the graph-based segmentation step which--combined with the MUC--underlies the feature selection in the xMCC framework, with principal component analysis (PCA).  PCA is an efficient approach for reducing the dimensionality and for capturing endogenous components in electrophysiological time series
+% 	 
+%\listofchanges  
+%\end{document}  
+
+
+
+
+\documentclass[review,1p,12pt,longtitle,authoryear]{elsarticle}
+%\documentclass[review,1p,12pt,longtitle]{elsarticle}
+%\documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,two column; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+\usepackage{changes}  
+\usepackage{color}
+\usepackage{multirow,booktabs,ctable,array}
+\usepackage{lscape}
+\usepackage{amsmath}
+\usepackage{lineno}
+\usepackage{ulem}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{natbib}
+% to use package changes
+\definechangesauthor[name={Hong}, color=orange]{Hong}  
+\setremarkmarkup{(#2)} 
+% end
+
+\floatstyle{plain}
+\newfloat{command}{thp}{lop}
+\floatname{command}{Command}
+%\usepackage{ifpdf}
+%\ifpdf
+%	\usepackage[pdftex]{graphicx}
+%	\graphicspath{{figure-pdf/}}
+%	\DeclareGraphicsExtensions{.pdf, .jpg, .png, .tif}
+%	\usepackage[pdftex]{hyperref}
+%    \usepackage{float}
+%\else
+%	\usepackage[dvips]{graphicx}
+%	\graphicspath{{figure-eps/}}
+%	\DeclareGraphicsExtensions{.eps, .ps}
+%	\usepackage[hypertex]{hyperref}
+%\fi
+% --------------------------------------------------------------------
+\hyphenpenalty 1000
+\exhyphenpenalty 1000
+%\usepackage[nomarkers,notablist]{endfloat}
+
+% --------------------------------------------------------------------
+\usepackage{epsfig,algorithm,algorithmic,graphicx}
+%% if you use PostScript figures in your article
+%% use the graphics package for simple commands
+%% \usepackage{graphics}
+%% or use the graphicx package for more complicated commands \usepackage{graphicx}
+%% or use the epsfig package if you prefer to use the old commands
+%% \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+% \usepackage{amsthm}
+
+\usepackage{makecell}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+%% \usepackage{lineno}
+
+%% natbib.sty is loaded by default. However, natbib options can be
+%% provided with \biboptions{...} command. Following options are
+%% valid:
+
+%%   round  -  round parentheses are used (default)
+%%   square -  square brackets are used   [option]
+%%   curly  -  curly braces are used      {option}
+%%   angle  -  angle brackets are used    <option>
+%%   semicolon  -  multiple citations separated by semi-colon
+%%   colon  - same as semicolon, an earlier confusion
+%%   comma  -  separated by comma
+%%   numbers-  selects numerical citations
+%%   super  -  numerical citations as superscripts
+%%   sort   -  sorts multiple citations according to order in ref. list
+%%   sort&compress   -  like sort, but also compresses numerical citations
+%%   compress - compresses without sorting
+%%
+%% \biboptions{comma,round}
+
+% \biboptions{}
+
+\providecommand{\OO}[1]{\operatorname{O}\bigl(#1\bigr)}
+
+\graphicspath{{./figures/}
+}
+
+\long\def\symbolfootnote[#1]#2{\begingroup%
+	\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+
+\usepackage{color}
+
+\definecolor{listcomment}{rgb}{0.0,0.5,0.0}
+\definecolor{listkeyword}{rgb}{0.0,0.0,0.5}
+\definecolor{listnumbers}{gray}{0.65}
+\definecolor{listlightgray}{gray}{0.955}
+\definecolor{listwhite}{gray}{1.0}
+
+\newcommand{\lstsetcpp}
+{
+	\lstset{frame = tb,
+		framerule = 0.25pt,
+		float,
+		fontadjust,
+		backgroundcolor={\color{listlightgray}},
+		basicstyle = {\ttfamily\scriptsize},
+		keywordstyle = {\ttfamily\color{listkeyword}\textbf},
+		identifierstyle = {\ttfamily},
+		commentstyle = {\ttfamily\color{listcomment}\textit},
+		stringstyle = {\ttfamily},
+		showstringspaces = false,
+		showtabs = false,
+		numbers = none,
+		numbersep = 6pt,
+		numberstyle={\ttfamily\color{listnumbers}},
+		tabsize = 2,
+		language=[ANSI]C++,
+		floatplacement=!h,
+		caption={},
+		captionpos=b,
+	}
+}
+%\renewcommand{\labelitemi}{$\dot$}
+\modulolinenumbers[5]  %mark line number for every 5 lines
+\journal{Neuroimage}
+\begin{document}
+	\pagestyle{empty}
+	\begin{frontmatter}
+		
+		\title{Cross Multivariate Correlation Coefficients as an Efficient Screening Tool for Analysis of Concurrent EEG-fMRI Recordings}
+		%\tnotetext[t1]{This work is a collaborative effort.}
+		
+		\author[mymainaddress]{Hong Ji}
+		\author[mysecondaryaddress]{Nathan M. Petro}
+		\author[mymainaddress]{Badong Chen\corref{cor1}\fnref{fn1}}
+		\cortext[cor1]{Corresponding author}
+		
+		\author[mymainaddress]{Zejian Yuan}
+		\author[mymainaddress]{Jianji Wang}
+		\author[mymainaddress]{Nanning Zheng}
+		\author[mysecondaryaddress]{Andreas Keil\fnref{fn2}}
+		%\cortext[cor2]{Principal corresponding author}
+		
+		\address[mymainaddress]{Institute of Artificial Intelligence and Robotics, Xiᯡn Jiaotong Univeristy, P.O. Box 1171, 28 Xianning West Road, Xi'an 710049}
+		\address[mysecondaryaddress]{Center for the Study of Emotion and Attention, University of Florida, P.O. Box 112766, Gainesville, FL 32611-2250}
+		
+		\fntext[fn1]{Email: chenbd@mail.xjtu.edu.cn; Tel: +86-(29)-8266-8802 ext. 8009}
+		\fntext[fn2]{Email: akeil@ufl.edu; Tel: +1 (352)-256-1124}
+		
+		%\maketitle
+		
+		%\linenumbers
+		
+		
+		\begin{abstract}
+			Over the past decade, the simultaneous recording of electroencephalogram (EEG) and functional magnetic resonance imaging (fMRI) data has garnered growing interest because it may provide an avenue towards combining the strengths of both imaging modalities. Given their pronounced differences in temporal and spatial statistics, the combination of EEG and fMRI data is however methodologically challenging. A number of algorithms have been proposed to address this problem, many of which have strong assumptions (such as regarding the shape of the hemodynamic response function), or rely on higher-order representations of the data that may make interpretation difficult. Here, we propose a simple and efficient screening approach that relies on a novel Cross Multivariate Correlation Coefficient (xMCC) framework. This approach accomplishes four tasks: (1) It provides a simple, fast, easy to interpret measure to test multivariate correlation and multivariate uncorrelation with variable temporal alignment of the two modalities; (2) it provides an objective criterion for the selection of EEG features; (3) it performs a screening of relevant EEG information by grouping the EEG channels into clusters to improve efficiency and reduce computational load when searching for the best predictors; (4) it applies a permutation test to identify regions in which EEG and BOLD covary. The present report applies this approach to a data set with concurrent recordings of steady-state-visual evoked potentials (ssVEP) and fMRI, when observers viewed phase-reversing Gabor patches. It was found that the xMCC-based analysis provides straightforward identification of brain regions in which BOLD specifically co-varies with electrocortical activity measured at specific subsets of electrodes.
+		\end{abstract}
+		
+		\begin{keyword}
+			%% keywords here, in the form: keyword \sep keyword
+			simultaneous EEG and fMRI \sep cross multivariate correlation coefficients (xMCC) \sep cross multivariate uncorrelation coefficients (xMUC) \sep multivariate correlation coefficients (MCC) \sep multivariate uncorrelation coefficients (MUC)
+		\end{keyword}
+		
+	\end{frontmatter}
+	%
+	%
+	\newpage
+	
+	
+	%% MSC codes here, in the form: \MSC code \sep code
+	%% or \MSC[2008] code \sep code (2000 is the default)
+	
+	%%
+	%% Start line numbering here if you want
+	%%
+	
+	\linenumbers
+	
+	%% main text
+	
+	\section{Introduction}
+	
+    \bibliographystyle{model2-names}
+	\bibliography{library}
+	
+	%\small \bibliographystyle{model2-names} \bibliography{supp_biblio}
+	
+\end{document}

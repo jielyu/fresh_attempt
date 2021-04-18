@@ -1,0 +1,37 @@
+\documentclass{article}
+%\usepackage{xeCJK}
+%\setCJKmainfont{STSong}
+\usepackage{ctex}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{listings}
+\newfontfamily\chalkdusterfont{Chalkduster}
+\begin{document}
+Hello    中文
+
+nihao the Great Fire Wall
+
+{\CJKfontspec{STKaitiSC-Regular} 你好}
+
+\begin{equation}
+	f(x)=sign(w_1x_1 + w_2x_2 + b)
+\end{equation}
+
+{\setmainfont{BrushScriptStd} Hello, World}
+
+    \begin{equation}
+sign{x} =
+\begin{cases}
++1&, x \geq 0\\
+-1&, x \le 0 
+\end{cases}
+\end{equation}
+
+\begin{lstlisting}[language=C]
+int main(int argc, char ** argv) {
+    printf("Hello, world!");
+    return 0;
+}
+\end{lstlisting}
+
+\end{document}
