@@ -1,0 +1,6 @@
+name: test_dart
+description: none
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+dependencies:
+  path: ^1.8.0
