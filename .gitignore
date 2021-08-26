@@ -465,4 +465,4 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-!**/test_go/go.mod
+!**/go.mod
