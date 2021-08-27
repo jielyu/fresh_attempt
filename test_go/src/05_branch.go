@@ -4,8 +4,8 @@ import "fmt"
 
 func main() {
 	// if 分支
-	var b = true
-	if b {
+	//var b = true
+	if b := true; b {
 		fmt.Println("true branch")
 	} else {
 		fmt.Println("false branch")
