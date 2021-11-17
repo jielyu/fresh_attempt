@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:dotted_line/dotted_line.dart';
 import 'src/test_sensor.dart';
 
 // 定义合管理路由项目
@@ -28,16 +28,19 @@ class RouteNavItem extends StatelessWidget {
   }
 }
 
+// Widget相关的路由项目
+
+// 传感器相关的路由项目
 final sensorRoutes = [
   RouterItem(
       name: 'TestSensor',
-      route: TestSensor.route_name,
+      route: TestSensor.routeName,
       builder: (context) => const TestSensor()),
 ];
-
 final sensorRouteMap =
     Map.fromEntries(sensorRoutes.map((e) => MapEntry(e.route, e.builder)));
 
+// 所有路由设置
 final allRoutes = <String, WidgetBuilder>{
   ...sensorRouteMap,
 };
@@ -49,14 +52,22 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Sensor Samples1"),
+        title: const Text("测试"),
       ),
       body: ListView(
         children: [
           ListTile(
               title: Text(
+            "Widgets",
+            style: Theme.of(context).textTheme.headline5,
+            textAlign: TextAlign.center,
+          )),
+          const DottedLine(),
+          ListTile(
+              title: Text(
             "Sensors",
-            style: Theme.of(context).textTheme.headline3,
+            style: Theme.of(context).textTheme.headline5,
+            textAlign: TextAlign.center,
           )),
           ...sensorRoutes.map((e) => RouteNavItem(route: e)),
         ],
@@ -65,13 +76,13 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class SensorSample extends StatelessWidget {
-  const SensorSample({Key? key}) : super(key: key);
+class FreshmanSample extends StatelessWidget {
+  const FreshmanSample({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Sensor Samples2",
+      title: "功能测试",
       routes: allRoutes,
       home: const HomePage(),
     );
@@ -79,5 +90,5 @@ class SensorSample extends StatelessWidget {
 }
 
 void main() {
-  runApp(const SensorSample());
+  runApp(const FreshmanSample());
 }
