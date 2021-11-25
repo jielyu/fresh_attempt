@@ -16,7 +16,7 @@ jobs:
         include:
           - os: windows-2019
             visual_studio: "Visual Studio 16 2019"
-          - os: windows-2019
+          - os: windows-2016
             visual_studio: "Visual Studio 14 2015"
     env:
       build_dir: "build"
