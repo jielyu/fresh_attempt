@@ -34,7 +34,7 @@ jobs:
     - name: Compile
       shell: bash
       working-directory: ${{ env.build_dir }}
-      run: cmake --build . --config ${{ env.config }} --target ALL_BUILD --verbose
+      run: cmake --build . --config ${{ env.config }} --verbose
 
     - name: Run Demo
       working-directory: ${{ env.build_dir }}
