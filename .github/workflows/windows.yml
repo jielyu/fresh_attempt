@@ -31,6 +31,7 @@ jobs:
       run: cmake --build . --config ${{ env.config }} --target ALL_BUILD --verbose
 
     - name: Run Demo
+      working-directory: ${{ env.build_dir }}
       shell: bash
-      run: ./build/demo.exe
+      run: ./Release/demo.exe
 
