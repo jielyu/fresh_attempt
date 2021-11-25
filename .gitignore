@@ -467,3 +467,4 @@ dmypy.json
 cython_debug/
 
 !**/go.mod
+!test_flutter/lib
