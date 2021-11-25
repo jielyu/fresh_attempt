@@ -16,6 +16,11 @@ jobs:
   build:
     # This job will run on ubuntu virtual machine
     runs-on: macOS-11
+    defaults:
+      run:
+        shell: bash
+        working-directory: test_flutter
+
     steps:
     
     # Setup Java environment in order to build the Android app.
