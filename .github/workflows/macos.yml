@@ -1,0 +1,43 @@
+name: Macos
+on:
+  push:
+    branches: 
+      - "master"
+    paths:
+        - "test_github_action/**"
+        - ".github/workflows/macos.yml"
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy: 
+      fail-fast: false
+      matrix:
+        include:
+          - os: macOS-10.15
+          #- os: ubuntu-20.04
+    env:
+      build_dir: "build"
+      config: "Release"
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Check Cmake Version
+      shell: bash
+      run: cmake --version
+
+    - name: Configure Cmake
+      shell: bash
+      run: cmake ./test_github_action/ -B ${{ env.build_dir }}
+
+    - name: Compile
+      shell: bash
+      working-directory: ${{ env.build_dir }}
+      run: cmake --build . --config ${{ env.config }} --verbose
+
+    - name: Run Demo
+      working-directory: ${{ env.build_dir }}
+      shell: bash
+      run: ./demo
+
