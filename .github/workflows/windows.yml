@@ -31,7 +31,7 @@ jobs:
 
     - name: Configure Cmake
       shell: bash
-      run: cmake ./test_github_action/ -B ${{ env.build_dir }} -G "${{ matrix.vitual_studio }}" -A x64
+      run: cmake ./test_github_action/ -B ${{ env.build_dir }} -G "${{ matrix.visual_studio }}" -A x64
 
     - name: Compile
       shell: bash
