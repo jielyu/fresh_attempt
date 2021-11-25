@@ -9,6 +9,7 @@ test_latex/*.pdf
 **/.*
 **/*.lock
 **/.vscode/
+!.github/
 
 # Prerequisites
 *.d
