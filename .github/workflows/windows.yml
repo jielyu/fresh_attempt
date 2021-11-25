@@ -9,7 +9,15 @@ on:
 
 jobs:
   build:
-    runs-on: windows-2019
+    runs-on: ${{ matrix.os }}
+    strategy: 
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-2019
+            visual_studio: "Visual Studio 16 2019"
+          - os: windows-2019
+            visual_studio: "Visual Studio 14 2015"
     env:
       build_dir: "build"
       config: "Release"
@@ -23,7 +31,7 @@ jobs:
 
     - name: Configure Cmake
       shell: bash
-      run: cmake ./test_github_action/ -B ${{ env.build_dir }} -G "Visual Studio 16 2019" -A x64
+      run: cmake ./test_github_action/ -B ${{ env.build_dir }} -G "${{ matrix.vitual_studio }}" -A x64
 
     - name: Compile
       shell: bash
