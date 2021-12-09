@@ -55,6 +55,30 @@ final widgetRoutes = [
       name: ImageDemo.name,
       route: ImageDemo.routeName,
       builder: (context) => const ImageDemo()),
+  RouterItem(
+      name: AlignDemo.name,
+      route: AlignDemo.routeName,
+      builder: (context) => const AlignDemo()),
+  RouterItem(
+      name: AspectRatioDemo.name,
+      route: AspectRatioDemo.routeName,
+      builder: (context) => const AspectRatioDemo()),
+  RouterItem(
+      name: TransformDemo.name,
+      route: TransformDemo.routeName,
+      builder: (context) => const TransformDemo()),
+  RouterItem(
+      name: AutocompleteDemo.name,
+      route: AutocompleteDemo.routeName,
+      builder: (context) => const AutocompleteDemo()),
+  RouterItem(
+      name: FormDemo.name,
+      route: FormDemo.routeName,
+      builder: (context) => const FormDemo()),
+  RouterItem(
+      name: GridViewDemo.name,
+      route: GridViewDemo.routeName,
+      builder: (context) => const GridViewDemo()),
 ];
 final widgetRouteMap =
     Map.fromEntries(widgetRoutes.map((e) => MapEntry(e.route, e.builder)));
