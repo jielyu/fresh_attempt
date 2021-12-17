@@ -22,6 +22,7 @@ func main() {
 	// 创建连接
 	conn, err := net.DialTCP("tcp", nil, tcpAddr)
 	checkError(err)
+	defer conn.Close()
 	fmt.Printf("connect to %s succ\n", addr)
 
 	// 创建缓冲区
