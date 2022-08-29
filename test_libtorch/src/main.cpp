@@ -1,3 +1,7 @@
+/*
+参考教程： https://juejin.cn/post/6986819804757753869
+*/
+
 #include <torch/script.h> // 引入libtorch头文件
 #include <torch/torch.h>  // cuda相关函数头文件
 
