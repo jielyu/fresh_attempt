@@ -9,6 +9,9 @@ test_latex/*.pdf
 **/.*
 **/*.lock
 **/.vscode/
+**/events.out.tfevents*
+**/lightning_logs/
+**/MNIST
 !.github/
 
 # Prerequisites
