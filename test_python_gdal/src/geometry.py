@@ -366,8 +366,8 @@ def main():
     # test_geometry_json()
     # test_geometry_to_wtk()
     # test_geometry_to_kml()
-    # test_geometry_to_wkb()
-    test_polygon_to_multi_polygon()
+    test_geometry_to_wkb()
+    # test_polygon_to_multi_polygon()
 
 
 if __name__ == "__main__":

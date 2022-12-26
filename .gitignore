@@ -12,6 +12,7 @@ test_latex/*.pdf
 **/events.out.tfevents*
 **/lightning_logs/
 **/MNIST
+**/target/
 !.github/
 
 # Prerequisites
