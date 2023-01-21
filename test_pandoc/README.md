@@ -28,37 +28,45 @@ cp pandoc-crossref /usr/local/bin/
 
 ## 参数解释
 
-### 1. 资源嵌入网页
+### 1. 独立的文件
 
 ```
---standalone --embed-resources 
+--standalone
 ```
 
-### 2. 处理引用和参考文献
+### 2. 资源嵌入网页
+
+会将样式和图嵌入到html文件中，对于需要推送到 `medium` 的情况，不要设置这个选项 
+
+```
+--embed-resources 
+```
+
+### 3. 处理引用和参考文献
 
 ```
 --filter pandoc-crossref --citeproc 
 ```
 
-### 3. 设置样式
+### 4. 设置样式
 
 ```
 --css css/science.css 
 ```
 
-### 4. 设置能处理的文档类型
+### 5. 设置能处理的文档类型
 
 ```
 --from markdown+yaml_metadata_block+implicit_figures+fenced_divs+citations+table_captions 
 ```
 
-### 5. 设置输出文件的格式
+### 6. 设置输出文件的格式
 
 ```
 --to html5 
 ```
 
-### 6. 设置支持tex公式
+### 7. 设置支持tex公式
 
 ```
 --webtex
