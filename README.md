@@ -4,33 +4,48 @@ attempt different tools and new tech as freshman
 
 ## [Accelerate](test_accelerate/)
 
-多卡训练PyTorch模型
+多卡训练PyTorch模型的工具
+
 
 ## [CMake](test_cmake/)
 
 测试windows下使用cmake生成vs工程，同时管理lib、dll和安装
 
+
 ## [cobra](test_cobra/)
+
+golang命令行参数解析框架
+
+
+## [Conan](test_conan/)
+
+基于Python的C++包管理器
+
 
 ## [Cryptology](test_cryptology/)
 
 密码学
 
+
 ## [C#](test_csharp/)
 
 测试C#的基本语法
+
 
 ## [Dart](test_dart/)
 
 dart语言，flutter的编程语言
 
+
 ## [dvc](test_dvc/)
 
 数据集版本控制工具
 
+
 ## [Flet](test_flet/)
 
 Python版flutter
+
 
 ## [flutter](test_flutter/)
 
@@ -61,6 +76,9 @@ C++常用命令行参数解析工具
 
 PyTorch的C++接口
 
+## [manim](test_manim/)
+
+Python版动画制作工具
 
 ## [Matlab](test_matlab/)
 
@@ -80,6 +98,9 @@ PyTorch的C++接口
 
 用于将c++程序封装为Python可调用的动态库
 
+## [pyinstaller+pyqt6](test_pyinstaller_pyqt6/)
+
+使用PyQt6开发应用程序，然后用pyinstaller打包
 
 ## [Qt SVG](test_qt_svg/)
 
@@ -95,6 +116,9 @@ Shell脚本语言
 
 RUST版应用程序框架
 
+## [vulkan](test_vulkan/)
+
+新一代图形渲染引擎
 
 ## [xgo](test_xgo/)
 
