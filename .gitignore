@@ -1,3 +1,4 @@
+CMakeUserPresets.json
 **/bin/
 **/obj/
 .DS_Store
