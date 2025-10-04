@@ -9,7 +9,9 @@ find_package(pybind11 REQUIRED CONFIG)
 find_package(nlohmann_json REQUIRED CONFIG)
 find_package(pybind11_json REQUIRED CONFIG)
 
-pybind11_add_module(example src/main.cpp)
+file(GLOB_RECURSE MODULE_SOURCES "src/*.cpp")
+
+pybind11_add_module(example ${MODULE_SOURCES})
 
 # 设置 C++ 标准（pybind11 需要 C++11 或更高）
 target_compile_features(example PRIVATE cxx_std_17)
