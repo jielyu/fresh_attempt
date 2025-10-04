@@ -10,6 +10,7 @@ class PyBind11Example(ConanFile):
 
     def requirements(self):
         self.requires("pybind11/3.0.1")
+        self.requires("nlohmann_json/3.12.0")
         # self.requires("pybind11/2.10.4")
         # self.requires("pybind11_json/0.2.13")
 
