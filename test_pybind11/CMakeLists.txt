@@ -22,11 +22,11 @@ pybind11_add_module(example ${MODULE_SOURCES})
 # 设置 C++ 标准（pybind11 需要 C++11 或更高）
 target_compile_features(example PRIVATE cxx_std_17)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE 
-    pybind11::module 
-    nlohmann_json::nlohmann_json 
-    pybind11_json::pybind11_json
-)
+# target_link_libraries(${PROJECT_NAME} PRIVATE 
+#     pybind11::module 
+#     nlohmann_json::nlohmann_json 
+#     pybind11_json::pybind11_json
+# )
 
 if(APPLE)
     # 避免重复链接 C++ 标准库
