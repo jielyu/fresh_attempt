@@ -10,6 +10,7 @@ find_package(nlohmann_json REQUIRED CONFIG)
 find_package(pybind11_json REQUIRED CONFIG)
 
 file(GLOB_RECURSE MODULE_SOURCES "src/*.cpp")
+list(FILTER MODULE_SOURCES EXCLUDE REGEX "src/json\\.cpp$")
 
 pybind11_add_module(example ${MODULE_SOURCES})
 

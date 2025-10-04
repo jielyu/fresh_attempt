@@ -9,8 +9,9 @@ class PyBind11Example(ConanFile):
     generators = "CMakeDeps", "CMakeToolchain"
 
     def requirements(self):
-        self.requires("pybind11/2.10.4")
-        self.requires("pybind11_json/0.2.13")
+        self.requires("pybind11/3.0.1")
+        # self.requires("pybind11/2.10.4")
+        # self.requires("pybind11_json/0.2.13")
 
     def build_requirements(self):
         self.tool_requires("cmake/3.27.9")
