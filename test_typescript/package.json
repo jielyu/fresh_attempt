@@ -1,0 +1,18 @@
+{
+    "name": "my-ts-app",
+    "main": "dist/index.js",
+    "bin": "dist/index.js",
+    "pkg": {
+        "targets": [
+            "node18-win-x64",
+            "node18-macos-x64",
+            "node18-linux-x64"
+        ],
+        "outputPath": "dist-exec"
+    },
+    "devDependencies": {
+        "@types/node": "^24.10.0",
+        "tsx": "^4.20.6",
+        "typescript": "^5.9.3"
+    }
+}
