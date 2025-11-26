@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://ygwwx1p4qkp4"]
+
+[ext_resource type="Script" uid="uid://bjt2crt8kqjue" path="res://scenes/game_control_panel.gd" id="2_tx6nw"]
+[ext_resource type="Script" uid="uid://bkyw3rgkw4kkg" path="res://scenes/win_panel.gd" id="3_fv4ni"]
+[ext_resource type="Script" uid="uid://df7qvxo33xn8y" path="res://scenes/gobang_board.gd" id="3_nglv8"]
+
+[sub_resource type="GDScript" id="GDScript_tx6nw"]
+
+[node name="Main" type="Node2D"]
+script = SubResource("GDScript_tx6nw")
+metadata/_edit_vertical_guides_ = [884.0]
+
+[node name="GobangBoard" type="TextureRect" parent="."]
+offset_left = 163.0
+offset_top = 2.0
+offset_right = 784.0
+offset_bottom = 637.0
+mouse_filter = 0
+script = ExtResource("3_nglv8")
+
+[node name="CurrentPlayerLabel" type="Label" parent="GobangBoard"]
+layout_mode = 0
+offset_left = 746.0
+offset_top = 221.0
+offset_right = 786.0
+offset_bottom = 244.0
+
+[node name="GameControlPanel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 904.0
+offset_top = 304.0
+offset_right = 1029.0
+offset_bottom = 373.0
+script = ExtResource("2_tx6nw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameControlPanel"]
+layout_mode = 0
+offset_right = 116.0
+offset_bottom = 66.0
+
+[node name="RestartButton" type="Button" parent="GameControlPanel/VBoxContainer"]
+layout_mode = 2
+text = "重新开始"
+
+[node name="UndoButton" type="Button" parent="GameControlPanel/VBoxContainer"]
+layout_mode = 2
+text = "悔棋"
+
+[node name="WinPanel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 400.0
+offset_top = 26.0
+offset_right = 488.0
+offset_bottom = 105.0
+script = ExtResource("3_fv4ni")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WinPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="WinPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="WinPanel/VBoxContainer"]
+layout_mode = 2
+text = "确定"

@@ -61,6 +61,9 @@ C++常用命令行参数解析工具
 
 测试Github Action定制自动化CI/CD流程
 
+## [GoDot](test_godot)
+
+尝试godot游戏引擎，制作一个简易的五子棋的游戏
 
 ## [Jekyll](test_jekyll/)
 

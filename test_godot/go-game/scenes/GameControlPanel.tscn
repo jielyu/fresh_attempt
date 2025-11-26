@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6b0vux5gehs0"]
+
+[sub_resource type="GDScript" id="GDScript_07qx6"]
+script/source = "extends Control
+
+# 定义两个自定义信号
+signal restart_requested  # 当点击“重新开始”按钮时发出
+signal undo_requested     # 当点击“悔棋”按钮时发出
+
+@onready var restart_button = $RestartButton
+@onready var undo_button = $UndoButton
+
+func _ready():
+	# 连接按钮的 pressed 信号到本脚本的私有函数
+	restart_button.connect(\"pressed\", _on_restart_button_pressed)
+	undo_button.connect(\"pressed\", _on_undo_button_pressed)
+
+# “重新开始”按钮被点击
+func _on_restart_button_pressed():
+	# 发出我们自己的信号
+	emit_signal(\"restart_requested\")
+	print(\"GameControlPanel: restart_requested 信号已发出\")
+
+# “悔棋”按钮被点击
+func _on_undo_button_pressed():
+	# 发出我们自己的信号
+	emit_signal(\"undo_requested\")
+	print(\"GameControlPanel: undo_requested 信号已发出\")
+"
+
+[node name="GameControlPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_07qx6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 117.0
+offset_bottom = 41.0
+
+[node name="RestartButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "重新开始"
+
+[node name="UndoButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "悔棋"
