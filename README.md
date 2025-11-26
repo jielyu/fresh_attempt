@@ -119,6 +119,10 @@ Shell脚本语言
 
 RUST版应用程序框架
 
+## [TypeScipt](test_typescript)
+
+typescript 的编译运行尝试
+
 ## [vulkan](test_vulkan/)
 
 新一代图形渲染引擎
