@@ -79,6 +79,8 @@ C++常用命令行参数解析工具
 
 PyTorch的C++接口
 
+## [LibTorchVision](test_libtorchvision/)
+
 ## [manim](test_manim/)
 
 Python版动画制作工具
