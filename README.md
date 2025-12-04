@@ -89,6 +89,9 @@ Python版动画制作工具
 
 数学计算软件
 
+## [onnx](test_onnx/)
+
+部署深度学习前向推理的示例
 
 ## [OpenCV](test_opencv)
 
