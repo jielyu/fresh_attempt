@@ -124,6 +124,10 @@ Shell脚本语言
 
 RUST版应用程序框架
 
+## [TensorRT](test_tensorrt)
+
+在nvidia的GPU上部署模型的示例
+
 ## [TypeScipt](test_typescript)
 
 typescript 的编译运行尝试
