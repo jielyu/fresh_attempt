@@ -36,6 +36,9 @@ golang命令行参数解析框架
 
 dart语言，flutter的编程语言
 
+## [DeepSeekV3.2-Tokenizer](test_deepseek_tokenizer/)
+
+使用 DeepSeekV3.2 的分词器
 
 ## [dvc](test_dvc/)
 
