@@ -1,0 +1,15 @@
+[project]
+name = "test-uv"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.3.5",
+]
+
+[dependency-groups]
+dev = [
+    "black>=25.11.0",
+    "pip>=25.3",
+]

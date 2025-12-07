@@ -132,6 +132,10 @@ RUST版应用程序框架
 
 typescript 的编译运行尝试
 
+## [uv](test_uv)
+
+一种管理python虚拟环境的工具，环境存放在项目的根目录下，不同于conda的集中存放
+
 ## [vulkan](test_vulkan/)
 
 新一代图形渲染引擎
