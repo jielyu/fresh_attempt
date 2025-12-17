@@ -7,6 +7,7 @@ requires-python = ">=3.12"
 dependencies = [
     "ale-py>=0.11.2",
     "gymnasium[box2d,classic-control,mujoco,toy-text]>=1.2.2",
+    "matplotlib>=3.10.8",
     "opencv-python>=4.12.0.88",
     "swig>=4.4.0",
     "torch==2.5.0",
