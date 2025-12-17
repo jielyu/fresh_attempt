@@ -1,0 +1,20 @@
+[project]
+name = "test-rl"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ale-py>=0.11.2",
+    "gymnasium[box2d,classic-control,mujoco,toy-text]>=1.2.2",
+    "opencv-python>=4.12.0.88",
+    "swig>=4.4.0",
+    "torch==2.5.0",
+    "torchaudio==2.5.0",
+    "torchvision==0.20.0",
+]
+
+[dependency-groups]
+dev = [
+    "pip>=25.3",
+]
