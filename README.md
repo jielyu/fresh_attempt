@@ -118,6 +118,10 @@ Python版动画制作工具
 QT 矢量图
 
 
+## [Rust](test_rust)
+
+- 静态库绑定
+
 ## [Shell](test_shell)
 
 Shell脚本语言
