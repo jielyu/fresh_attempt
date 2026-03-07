@@ -1,0 +1,571 @@
+{
+  "75": {
+    "inputs": {
+      "filename_prefix": "video/LTX-2.3",
+      "format": "auto",
+      "codec": "auto",
+      "video": [
+        "174",
+        0
+      ]
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "保存视频"
+    }
+  },
+  "154": {
+    "inputs": {
+      "steps": 20,
+      "max_shift": 2.05,
+      "base_shift": 0.95,
+      "stretch": true,
+      "terminal": 0.1,
+      "latent": [
+        "164",
+        0
+      ]
+    },
+    "class_type": "LTXVScheduler",
+    "_meta": {
+      "title": "LTXV调度器"
+    }
+  },
+  "155": {
+    "inputs": {
+      "sigmas": "0.909375, 0.725, 0.421875, 0.0"
+    },
+    "class_type": "ManualSigmas",
+    "_meta": {
+      "title": "自定义Sigmas"
+    }
+  },
+  "156": {
+    "inputs": {
+      "model_name": "ltx-2.3-spatial-upscaler-x2-1.0.safetensors"
+    },
+    "class_type": "LatentUpscaleModelLoader",
+    "_meta": {
+      "title": "加载Latent放大模型"
+    }
+  },
+  "157": {
+    "inputs": {
+      "positive": [
+        "162",
+        0
+      ],
+      "negative": [
+        "162",
+        1
+      ],
+      "latent": [
+        "169",
+        0
+      ]
+    },
+    "class_type": "LTXVCropGuides",
+    "_meta": {
+      "title": "LTXV裁剪指导"
+    }
+  },
+  "158": {
+    "inputs": {
+      "cfg": 1,
+      "model": [
+        "184",
+        0
+      ],
+      "positive": [
+        "157",
+        0
+      ],
+      "negative": [
+        "157",
+        1
+      ]
+    },
+    "class_type": "CFGGuider",
+    "_meta": {
+      "title": "CFG引导器"
+    }
+  },
+  "159": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "scale_by": 0.5,
+      "image": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "缩放图像（比例）"
+    }
+  },
+  "160": {
+    "inputs": {
+      "image": [
+        "159",
+        0
+      ]
+    },
+    "class_type": "GetImageSize",
+    "_meta": {
+      "title": "获取图像尺寸"
+    }
+  },
+  "161": {
+    "inputs": {
+      "frames_number": [
+        "166",
+        0
+      ],
+      "frame_rate": [
+        "182",
+        0
+      ],
+      "batch_size": 1,
+      "audio_vae": [
+        "175",
+        0
+      ]
+    },
+    "class_type": "LTXVEmptyLatentAudio",
+    "_meta": {
+      "title": "LTXV 空音频潜空间"
+    }
+  },
+  "162": {
+    "inputs": {
+      "frame_rate": [
+        "181",
+        0
+      ],
+      "positive": [
+        "173",
+        0
+      ],
+      "negative": [
+        "165",
+        0
+      ]
+    },
+    "class_type": "LTXVConditioning",
+    "_meta": {
+      "title": "LTXV条件"
+    }
+  },
+  "163": {
+    "inputs": {
+      "width": [
+        "160",
+        0
+      ],
+      "height": [
+        "160",
+        1
+      ],
+      "length": [
+        "166",
+        0
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLTXVLatentVideo",
+    "_meta": {
+      "title": "空Latent视频（LTXV）"
+    }
+  },
+  "164": {
+    "inputs": {
+      "video_latent": [
+        "163",
+        0
+      ],
+      "audio_latent": [
+        "161",
+        0
+      ]
+    },
+    "class_type": "LTXVConcatAVLatent",
+    "_meta": {
+      "title": "LTXVConcatAVLatent"
+    }
+  },
+  "165": {
+    "inputs": {
+      "text": "blurry, low quality, still frame, frames, watermark, overlay, titles, has blurbox, has subtitles",
+      "clip": [
+        "193",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码"
+    }
+  },
+  "166": {
+    "inputs": {
+      "value": 241
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Length"
+    }
+  },
+  "167": {
+    "inputs": {
+      "noise": [
+        "189",
+        0
+      ],
+      "guider": [
+        "180",
+        0
+      ],
+      "sampler": [
+        "185",
+        0
+      ],
+      "sigmas": [
+        "154",
+        0
+      ],
+      "latent_image": [
+        "164",
+        0
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "自定义采样器（高级）"
+    }
+  },
+  "168": {
+    "inputs": {
+      "noise_seed": 0
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "随机噪波"
+    }
+  },
+  "169": {
+    "inputs": {
+      "av_latent": [
+        "167",
+        0
+      ]
+    },
+    "class_type": "LTXVSeparateAVLatent",
+    "_meta": {
+      "title": "LTXV分离音视频潜空间"
+    }
+  },
+  "170": {
+    "inputs": {
+      "video_latent": [
+        "171",
+        0
+      ],
+      "audio_latent": [
+        "169",
+        1
+      ]
+    },
+    "class_type": "LTXVConcatAVLatent",
+    "_meta": {
+      "title": "LTXVConcatAVLatent"
+    }
+  },
+  "171": {
+    "inputs": {
+      "samples": [
+        "157",
+        2
+      ],
+      "upscale_model": [
+        "156",
+        0
+      ],
+      "vae": [
+        "192",
+        2
+      ]
+    },
+    "class_type": "LTXVLatentUpsampler",
+    "_meta": {
+      "title": "spatial"
+    }
+  },
+  "172": {
+    "inputs": {
+      "noise": [
+        "168",
+        0
+      ],
+      "guider": [
+        "158",
+        0
+      ],
+      "sampler": [
+        "186",
+        0
+      ],
+      "sigmas": [
+        "155",
+        0
+      ],
+      "latent_image": [
+        "170",
+        0
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "自定义采样器（高级）"
+    }
+  },
+  "173": {
+    "inputs": {
+      "text": [
+        "187",
+        0
+      ],
+      "clip": [
+        "193",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码pos"
+    }
+  },
+  "174": {
+    "inputs": {
+      "fps": [
+        "181",
+        0
+      ],
+      "images": [
+        "178",
+        0
+      ],
+      "audio": [
+        "179",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "创建视频"
+    }
+  },
+  "175": {
+    "inputs": {
+      "ckpt_name": "ltx-2.3-22b-dev.safetensors"
+    },
+    "class_type": "LTXVAudioVAELoader",
+    "_meta": {
+      "title": "LTXV音频VAE加载器"
+    }
+  },
+  "176": {
+    "inputs": {
+      "av_latent": [
+        "172",
+        1
+      ]
+    },
+    "class_type": "LTXVSeparateAVLatent",
+    "_meta": {
+      "title": "LTXV分离音视频潜空间"
+    }
+  },
+  "178": {
+    "inputs": {
+      "tile_size": 512,
+      "overlap": 64,
+      "temporal_size": 4096,
+      "temporal_overlap": 8,
+      "samples": [
+        "176",
+        0
+      ],
+      "vae": [
+        "192",
+        2
+      ]
+    },
+    "class_type": "VAEDecodeTiled",
+    "_meta": {
+      "title": "VAE解码（分块）"
+    }
+  },
+  "179": {
+    "inputs": {
+      "samples": [
+        "176",
+        1
+      ],
+      "audio_vae": [
+        "175",
+        0
+      ]
+    },
+    "class_type": "LTXVAudioVAEDecode",
+    "_meta": {
+      "title": "LTXV音频VAE解码"
+    }
+  },
+  "180": {
+    "inputs": {
+      "cfg": 4,
+      "model": [
+        "192",
+        0
+      ],
+      "positive": [
+        "162",
+        0
+      ],
+      "negative": [
+        "162",
+        1
+      ]
+    },
+    "class_type": "CFGGuider",
+    "_meta": {
+      "title": "CFG引导器"
+    }
+  },
+  "181": {
+    "inputs": {
+      "value": 24
+    },
+    "class_type": "PrimitiveFloat",
+    "_meta": {
+      "title": "Frame Rate(float)"
+    }
+  },
+  "182": {
+    "inputs": {
+      "value": 24
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Frame Rate(int)"
+    }
+  },
+  "184": {
+    "inputs": {
+      "lora_name": "ltx-2.3-22b-distilled-lora-384.safetensors",
+      "strength_model": 1,
+      "model": [
+        "192",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoRA加载器（仅模型）"
+    }
+  },
+  "185": {
+    "inputs": {
+      "sampler_name": "euler_ancestral"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "K采样器选择"
+    }
+  },
+  "186": {
+    "inputs": {
+      "sampler_name": "euler_ancestral"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "K采样器选择"
+    }
+  },
+  "187": {
+    "inputs": {
+      "prompt": "A close-up cinematic shot of futuristic mechanical parts assembling in midair like a high-tech machine building itself, tiny screws, gears and panels snapping into place, sparks and glowing lights, extremely detailed metal textures. The final assembled device has a clean, unobstructed flat surface with glowing engraved text clearly displaying \"LTX-2.3\", text is large, legible, centered, highly visible and not covered by any parts, dramatic studio lighting, ultra realistic, 8K, sharp focus, cinematic detail\n",
+      "max_length": 256,
+      "sampling_mode": "on",
+      "sampling_mode.temperature": 0.7,
+      "sampling_mode.top_k": 64,
+      "sampling_mode.top_p": 0.95,
+      "sampling_mode.min_p": 0.05,
+      "sampling_mode.repetition_penalty": 1.05,
+      "sampling_mode.seed": 0,
+      "clip": [
+        "193",
+        0
+      ]
+    },
+    "class_type": "TextGenerateLTX2Prompt",
+    "_meta": {
+      "title": "TextGenerateLTX2Prompt"
+    }
+  },
+  "188": {
+    "inputs": {
+      "preview": "",
+      "source": [
+        "187",
+        0
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "预览任意"
+    }
+  },
+  "189": {
+    "inputs": {
+      "noise_seed": 0
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "随机噪波"
+    }
+  },
+  "191": {
+    "inputs": {
+      "width": 1280,
+      "height": 720,
+      "batch_size": 1,
+      "color": 0
+    },
+    "class_type": "EmptyImage",
+    "_meta": {
+      "title": "空图像"
+    }
+  },
+  "192": {
+    "inputs": {
+      "ckpt_name": "ltx-2.3-22b-dev.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Checkpoint加载器（简易）"
+    }
+  },
+  "193": {
+    "inputs": {
+      "text_encoder": "gemma_3_12B_it_fp4_mixed.safetensors",
+      "ckpt_name": "ltx-2.3-22b-dev.safetensors",
+      "device": "default"
+    },
+    "class_type": "LTXAVTextEncoderLoader",
+    "_meta": {
+      "title": "LTXV音频文本编码器加载器"
+    }
+  }
+}

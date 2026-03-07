@@ -16,6 +16,10 @@ attempt different tools and new tech as freshman
 
 golang命令行参数解析框架
 
+## [ComfyUI](test_comfyui/)
+
+ComfyUI API 操作
+
 
 ## [Conan](test_conan/)
 
