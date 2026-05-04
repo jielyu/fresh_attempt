@@ -1,5 +1,10 @@
+import os
+
+os.environ['TILELANG_CACHE_DIR'] = "./cache"
+
 import tilelang
 import tilelang.language as T
+
 
 # 声明动态符号
 M = T.dynamic("M")
