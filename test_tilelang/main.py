@@ -1,8 +1,14 @@
 import tilelang
 import tilelang.language as T
 
+# 声明动态符号
+M = T.dynamic("M")
+N = T.dynamic("N")
+K = T.dynamic("K")
+
 @tilelang.jit(out_idx=[-1])
-def matmul(M, N, K, block_M, block_N, block_K, dtype=T.float16, accum_dtype=T.float32):
+def matmul(block_M, block_N, block_K, dtype=T.float16, accum_dtype=T.float32):
+#def matmul(M, N, K, block_M, block_N, block_K, dtype=T.float16, accum_dtype=T.float32):
     @T.prim_func
     def gemm(
         A: T.Tensor((M, K), dtype),
@@ -25,7 +31,7 @@ def matmul(M, N, K, block_M, block_N, block_K, dtype=T.float16, accum_dtype=T.fl
     return gemm
 
 def main():
-    kernel = matmul(1024, 1024, 1024, 128, 128, 32, dtype=T.float16)
+    kernel = matmul(128, 128, 32, dtype=T.float16)
 
     import torch
 
@@ -51,10 +57,10 @@ def main():
     print(kernel.get_kernel_source())
 
     # benchmark
-    profiler = kernel.get_profiler()
-    latency = profiler.do_bench(backend="cupti")
+    #profiler = kernel.get_profiler()
+    #latency = profiler.do_bench(backend="cupti")
     # latency = profiler.do_bench()
-    print(f"tilelang Latency: {latency}ms")
+    #print(f"tilelang Latency: {latency}ms")
 
 
 def run_regression_perf():
