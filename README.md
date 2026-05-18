@@ -44,6 +44,10 @@ dart语言，flutter的编程语言
 
 使用 DeepSeekV3.2 的分词器
 
+## [DeepSeek Tool-use](test_deepseek_tool_use/)
+
+演示大模型 DeepSeek 多轮工具调用的案例
+
 ## [dvc](test_dvc/)
 
 数据集版本控制工具
