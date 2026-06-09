@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">  <!-- 添加这一行 -->
+    <title>Docker Nginx HTTPS 测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: #f0f0f0;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        .lock {
+            font-size: 48px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lock">🔒</div>
+        <h1>HTTPS 连接成功！</h1>
+        <p class="success">✓ 自签名证书已生效</p>
+        <p>Nginx 运行在 Docker 容器中</p>
+        <p>证书配置正常，TLS 加密通信已建立</p>
+        <hr>
+        <small>访问地址: https://localhost</small>
+    </div>
+</body>
+</html>

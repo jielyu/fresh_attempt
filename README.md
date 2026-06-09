@@ -48,6 +48,10 @@ dart语言，flutter的编程语言
 
 演示大模型 DeepSeek 多轮工具调用的案例
 
+## [Docker Nginx](test_docker-nginx-ssl/)
+
+使用docker的nginx配置自签名证书的案例
+
 ## [dvc](test_dvc/)
 
 数据集版本控制工具
