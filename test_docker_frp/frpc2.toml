@@ -1,0 +1,19 @@
+# frpc C - STCP服务提供方（内部数据库）
+serverAddr = "你的云服务器公网IP"
+serverPort = 7000
+
+# ========== 认证配置（必须与服务端 [[users]] 匹配）==========
+user = "stcp-provider"
+auth.token = "Frp@2024_StcpProvider$Secret"
+
+# 日志
+log.to = "console"
+log.level = "info"
+
+# STCP 代理 - 仅授权客户端可访问
+[[proxies]]
+name = "internal-mysql"
+type = "stcp"
+secretKey = "shared-stcp-secret-key-2024"   # 共享密钥，访问方需一致
+localIP = "127.0.0.1"
+localPort = 3306                             # MySQL 端口

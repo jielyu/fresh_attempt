@@ -1,0 +1,19 @@
+# frpc B - 对外公开Web服务
+serverAddr = "你的云服务器公网IP"
+serverPort = 7000
+
+# ========== 认证配置（必须与服务端 [[users]] 匹配）==========
+user = "public-web"
+auth.token = "Frp@2024_PublicWeb#Secure"
+
+# 日志
+log.to = "console"
+log.level = "info"
+
+# 对外公开的 HTTP 服务
+[[proxies]]
+name = "public-website"
+type = "http"
+localIP = "127.0.0.1"
+localPort = 80                    # 本地 Web 服务端口
+customDomains = ["你的域名或服务器IP"]   # 无域名则填写服务器IP

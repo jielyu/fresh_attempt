@@ -1,0 +1,33 @@
+# frpc D - 带Fallback的访问方
+serverAddr = "你的云服务器公网IP"
+serverPort = 7000
+
+# ========== 认证配置（必须与服务端 [[users]] 匹配）==========
+user = "visitor"
+auth.token = "Frp@2024_Visitor_Fallback_Key"
+
+# 日志
+log.to = "console"
+log.level = "info"
+
+# ========== STCP visitor（备用，不监听物理端口）==========
+[[visitors]]
+name = "stcp-mysql-fallback"
+type = "stcp"
+serverName = "internal-mysql"                 # 对应服务提供方的 name
+secretKey = "shared-stcp-secret-key-2024"     # 必须与服务提供方一致
+bindPort = -1                                 # -1 表示不监听物理端口
+
+# ========== XTCP visitor（主通道，优先尝试 P2P）==========
+[[visitors]]
+name = "xtcp-mysql-visitor"
+type = "xtcp"
+serverName = "internal-mysql"                 # 对应服务提供方的 name
+secretKey = "shared-stcp-secret-key-2024"     # 必须与服务提供方一致
+bindAddr = "127.0.0.1"
+bindPort = 13306                              # 本地访问端口
+keepTunnelOpen = true                         # 保持隧道常开
+
+# ========== Fallback 配置 ==========
+fallbackTo = "stcp-mysql-fallback"
+fallbackTimeoutMs = 200

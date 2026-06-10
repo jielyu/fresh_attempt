@@ -48,6 +48,10 @@ dart语言，flutter的编程语言
 
 演示大模型 DeepSeek 多轮工具调用的案例
 
+## [Docker frp](test_docker_frp/)
+
+使用docker镜像进行内网穿透组网的案例
+
 ## [Docker Nginx](test_docker-nginx-ssl/)
 
 使用docker的nginx配置自签名证书的案例
