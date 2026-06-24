@@ -26,6 +26,11 @@ ComfyUI API 操作
 基于Python的C++包管理器
 
 
+## [cribo](test_cribo/)
+
+打包Python单文件的工具
+
+
 ## [Cryptology](test_cryptology/)
 
 密码学
