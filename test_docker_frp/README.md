@@ -2,21 +2,20 @@
 
 ## frps
 
+使用 `theanony/frp` 镜像，它包含多用户管理的插件
+
 ```
-# 启动容器
-docker run -d --name=frps \
-  --restart=always \
-  --network host \
-  -v /etc/frp/frps.toml:/etc/frp/frps.toml \
-  snowdreamtech/frps
+cd frps
+docker compose up -d
 ```
+
+在 `frps/tokens` 中增减授权的用户
 
 ## frpc
 
+可以使用 `fatedier/frpc` 镜像，它支持多种平台
+
 ```
-docker run -d --name=frpc-b \
-  --restart=always \
-  --network host \
-  -v /etc/frp/frpc-b.toml:/etc/frp/frpc.toml \
-  snowdreamtech/frpc
+cd frpc
+docker compose up -d
 ```

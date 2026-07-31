@@ -1,0 +1,24 @@
+# /opt/frps/docker-compose.yml
+version: '3'
+services:
+  # frp 服务端
+  frps:
+    image: theanony/frp:0.60.0  # 使用包含fp-multiuser的镜像
+    container_name: frps
+    restart: always
+    network_mode: "host"        # 与multiuser容器共享网络
+    volumes:
+      - ./frps.toml:/frp/config.toml:ro
+    entrypoint: ./frps          # 指定启动frps
+    command: -c config.toml
+
+  # 多用户鉴权插件
+  multiuser:
+    image: theanony/frp:0.60.0  # 使用相同镜像
+    container_name: fp-multiuser
+    restart: always
+    network_mode: "host"        # 与frps容器共享网络
+    volumes:
+      - ./tokens:/frp/tokens:ro
+    entrypoint: ./fp-multiuser  # 关键：指定启动插件
+    command: -l 127.0.0.1:7200 -f tokens

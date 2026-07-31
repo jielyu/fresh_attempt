@@ -1,0 +1,11 @@
+version: '3'
+services:
+  frpc:
+    image: fatedier/frpc:v0.70.1
+    container_name: frpc
+    restart: always
+    network_mode: "host"
+    volumes:
+      - ./frpc.toml:/etc/frp/frpc.toml:ro
+    working_dir: /etc/frp          # 设置工作目录到配置文件所在位置
+    command: -c frpc.toml           # 使用相对路径

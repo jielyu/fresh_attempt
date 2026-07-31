@@ -1,0 +1,13 @@
+# /opt/frpc/frpc.toml (对应user1)
+serverAddr = "[frps的IP]"
+serverPort = 7000
+
+user = "user1"              # 与 tokens 文件中的用户名一致
+metadatas.token = "client_token_123" # 与 tokens 文件中 user1 对应的 Token 一致
+
+[[proxies]]
+name = "ssh"
+type = "tcp"
+localIP = "10.168.1.206"
+localPort = 22
+remotePort = 6000

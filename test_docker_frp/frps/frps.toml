@@ -1,0 +1,10 @@
+# /opt/frps/frps.toml
+bindAddr = "0.0.0.0"
+bindPort = 7000
+auth.method = "token"
+
+[[httpPlugins]]
+name = "multiuser"
+addr = "127.0.0.1:7200"   # 指向multiuser容器的地址和端口
+path = "/handler"
+ops = ["Login"]           # 只处理登录请求
