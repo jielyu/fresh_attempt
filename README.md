@@ -156,6 +156,10 @@ RUST版应用程序框架
 
 在nvidia的GPU上部署模型的示例
 
+## [ThorVG](test_thorvg)
+
+Clipper2+ThorVG 实现的矢量运算和渲染
+
 ## [Tilelang](test_tilelang)
 
 使用python开发高性能GPU算子的工具
